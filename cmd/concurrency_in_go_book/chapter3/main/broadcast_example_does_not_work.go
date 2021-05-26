@@ -7,16 +7,20 @@ import (
     "time"
 )
 
-type Button struct {
+type CVBasedButton struct {
     Clicked *sync.Cond
 }
 
-func subscribe(c *sync.Cond, fn func()) {
+func subscribeToCVBasedButton(c *sync.Cond, fn func()) {
     var goroutineRunning sync.WaitGroup
     goroutineRunning.Add(1)
     go func() {
         goroutineRunning.Done()
-        time.Sleep(1*time.Second) // added to simulate the issue more regularly.
+
+        // We add a sleep here to simulate a time gap between when the goroutineRunning wait group
+        // is done and when we start waiting on the condition variable.
+        time.Sleep(1*time.Second)
+
         c.L.Lock()
         defer c.L.Unlock()
         c.Wait()
@@ -29,7 +33,7 @@ func main() {
     nWaitersFlag := flag.Int("n", 10, "Number of waiters")
     flag.Parse()
 
-    button := Button{
+    button := CVBasedButton{
         Clicked: sync.NewCond(&sync.Mutex{}),
     }
 
@@ -37,7 +41,7 @@ func main() {
     clickRegistered.Add(*nWaitersFlag)
     for i := 0; i < *nWaitersFlag; i++ {
         j := i
-        subscribe(
+        subscribeToCVBasedButton(
             button.Clicked,
             func() {
                 fmt.Printf("Button click registered by %d\n", j)
