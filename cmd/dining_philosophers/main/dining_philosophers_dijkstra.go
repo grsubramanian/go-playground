@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/gokul2411s/concurrency/internal"
+	"github.com/grsubramanian/go-playground/internal"
 	"math/rand"
 	"sync"
 	"time"

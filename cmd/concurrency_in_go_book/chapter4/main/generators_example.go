@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/gokul2411s/concurrency/pkg/concurrency_in_go_book/chapter4"
+	"github.com/grsubramanian/go-playground/pkg/concurrency_in_go_book/chapter4"
 )
 
 func main() {
