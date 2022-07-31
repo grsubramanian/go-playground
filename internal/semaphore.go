@@ -39,3 +39,9 @@ func (s Semaphore) Wait() {
 func (s Semaphore) Signal() {
 	s <- empty{}
 }
+
+func (s Semaphore) SignalN(n int) {
+	for i := 0; i < n; i++ {
+		s <- empty{}
+	}
+}
