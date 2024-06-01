@@ -1,0 +1,30 @@
+{
+    "gameConfig": {
+        "numContainers": 18,
+        "maxNumBallsPerContainer": 4,
+        "colors": ["Cy","Cr","Re","Ma","DG","Pu","Mj","Br","Pi","Bl","Ye","BG","Or","Gr","DP","LG"]
+    },
+    "gameState": {
+        "containers": [
+            ["Cy","Cr","Re","Ma"],
+            ["Ma","DG","Pu","Mj"],
+            ["Mj","Re","Br","Pi"],
+            ["Cy","Pu","Bl","Ye"],
+            ["Ma","Pu","BG","DG"],
+            ["Br","DG","Ye","LG"],
+            ["Bl","Or","BG","Gr"],
+            ["Mj","Cr","Or","Pu"],
+            ["Or","Ye","Bl","Pi"],
+            ["Cy","Br","Re","BG"],
+            ["Cr","DP","DG","BG"],
+            ["DP","Cy","Cr","LG"],
+            ["Mj","Ye","DP","LG"],
+            ["Gr","DP","Ma","Bl"],
+            ["Or","Pi","Gr","LG"],
+            ["Pi","Re","Gr","Br"],
+            [],
+            []
+        ]
+    }
+
+}
